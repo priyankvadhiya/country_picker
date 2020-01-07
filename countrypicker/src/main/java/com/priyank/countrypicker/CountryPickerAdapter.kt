@@ -8,7 +8,7 @@ import android.widget.Filter
 import android.widget.Filterable
 import kotlinx.android.synthetic.main.item_country.view.*
 
-class CountryPickerAdapter(
+internal class CountryPickerAdapter(
     private val list: List<Country>,
     private val onClickCountryName: OnClickCountryName
 ) :
