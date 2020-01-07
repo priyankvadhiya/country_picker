@@ -3,7 +3,7 @@
 [![](https://jitpack.io/v/priyankvadhiya/CountryPicker.svg)](https://jitpack.io/#priyankvadhiya/CountryPicker)
 
 
-<img src="https://github.com/priyankvadhiya/countrypicker/blob/master/device-2020-01-05-210824.png" width="250">
+<img src="https://github.com/priyankvadhiya/country_picker/blob/master/device-2020-01-05-210824.png" width="250">
 
 
 ## Usage
@@ -20,7 +20,11 @@ Step:1 Add it in your root build.gradle at the end of repositories
 Step 2: Add the dependency
 
     dependencies {
-		implementation 'com.github.priyankvadhiya:CountryPicker:1.0'
+    
+  		//Recommended
+        	implementation 'com.google.android.material:material:1.0.0'
+
+	        implementation 'com.github.priyankvadhiya:country_picker:1.0'
     }
 
 Step 3: Start CountryPicker
