@@ -25,6 +25,4 @@ class MainActivity : AppCompatActivity(), CountryPicker.ClickOnCountryItemResult
     override fun onClickCountry(country: CountryPicker.Country) {
         Toast.makeText(this,country.name,Toast.LENGTH_SHORT).show()
     }
-
-
 }
