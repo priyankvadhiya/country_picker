@@ -18,6 +18,7 @@
             android:id="@+id/imgFlag"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
+            android:layout_margin="0dp"
             android:adjustViewBounds="true"
             app:srcCompat="@drawable/flag_in" />
 
@@ -26,6 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
             android:fontFamily="sans-serif"
             android:textColor="@android:color/black"
@@ -38,6 +40,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:textColor="@android:color/black"
+            android:layout_marginEnd="0dp"
             android:textSize="14sp"
             tools:text="+91" />
 

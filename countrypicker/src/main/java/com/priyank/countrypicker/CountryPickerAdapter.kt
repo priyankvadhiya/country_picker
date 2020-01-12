@@ -1,5 +1,6 @@
 package com.priyank.countrypicker;
 
+import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,8 @@ import android.widget.Filterable
 import kotlinx.android.synthetic.main.item_country.view.*
 
 internal class CountryPickerAdapter(
-    private val list: List<Country>,
+    private val context: Context,
+    private val list: List<CountryPicker.CountryModel>,
     private val onClickCountryName: OnClickCountryName
 ) :
     RecyclerView.Adapter<CountryPickerAdapter.MyViewHolder>(), Filterable {
@@ -31,7 +33,7 @@ internal class CountryPickerAdapter(
         with(listFiltered[position]) {
             //Do you Write
             holder.itemView.imgFlag.setImageResource(this.flag)
-            holder.itemView.countryName.text = this.name
+            holder.itemView.countryName.text = context.getString(this.name)
             holder.itemView.countryDialCode.text = this.dialCode
 
             holder.itemView.setOnClickListener {
@@ -43,7 +45,7 @@ internal class CountryPickerAdapter(
     class MyViewHolder(rowView: View) : RecyclerView.ViewHolder(rowView)
 
     interface OnClickCountryName {
-        fun onClick(country: Country)
+        fun onClick(country: CountryPicker.CountryModel)
     }
 
     override fun getFilter(): Filter {
@@ -53,9 +55,9 @@ internal class CountryPickerAdapter(
                 listFiltered = if (charString.isEmpty()) {
                     list
                 } else {
-                    val filteredList = arrayListOf<Country>()
+                    val filteredList = arrayListOf<CountryPicker.CountryModel>()
                     for (row in list) {
-                        if (row.name.toLowerCase().contains(charString.toLowerCase()) || row.dialCode.toLowerCase().contains(
+                        if (context.getString(row.name).toLowerCase().contains(charString.toLowerCase()) || row.dialCode.toLowerCase().contains(
                                 charString.toLowerCase()
                             )
                         ) {
@@ -71,7 +73,7 @@ internal class CountryPickerAdapter(
             }
 
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                listFiltered = results?.values as ArrayList<Country>
+                listFiltered = results?.values as ArrayList<CountryPicker.CountryModel>
                 notifyDataSetChanged()
             }
         }
