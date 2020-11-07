@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.item_country.view.*
 
 internal class CountryPickerAdapter(
     private val context: Context,
-    private val list: List<CountryPicker.CountryModel>,
+    private val list: MutableList<CountryPicker.CountryModel>,
     private val onClickCountryName: OnClickCountryName
 ) :
     RecyclerView.Adapter<CountryPickerAdapter.MyViewHolder>(), Filterable {

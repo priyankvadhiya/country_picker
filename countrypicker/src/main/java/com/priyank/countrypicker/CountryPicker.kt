@@ -174,6 +174,7 @@ class CountryPicker(private var mContext: Context) {
                             }
                         }
                     })
+            mAdapter.setHasStableIds(true)
             view.recyclerCountryItem.adapter = mAdapter
         }
 
